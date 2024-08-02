@@ -1,0 +1,7 @@
+CREATE TABLE IF NOT EXISTS users
+(
+    id    SERIAL PRIMARY KEY,
+    name  VARCHAR(200) NOT NULL,
+    gold int NOT NULL
+);
+CREATE SEQUENCE users_id_seq START WITH 1 INCREMENT BY 1;
