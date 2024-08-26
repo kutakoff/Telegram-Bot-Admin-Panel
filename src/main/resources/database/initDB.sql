@@ -1,7 +1,7 @@
-CREATE TABLE IF NOT EXISTS users
+CREATE TABLE IF NOT EXISTS session
 (
-    id    SERIAL PRIMARY KEY,
-    name  VARCHAR(200) NOT NULL,
-    gold int NOT NULL
+    ID     int          NOT NULL,
+    CHAT_ID VARCHAR(200) NOT NULL,
+    DATE   timestamp    NOT NULL
 );
-CREATE SEQUENCE users_id_seq START WITH 1 INCREMENT BY 1;
+CREATE SEQUENCE session_id_seq START WITH 1 INCREMENT BY 1;

@@ -1,9 +1,21 @@
 package max.utils;
 
-public class BotUtils {
-    public static final String TOKEN = "7436267634:AAF4O_fFDU8S23UgPSaCkdPrVmN1gj0LhdI";
+import max.service.UtilsService;
+import org.springframework.beans.factory.annotation.Autowired;
 
-    public static final String PASSWORD = "123qwerty456";
+public class BotUtils {
+
+    @Autowired
+    private UtilsService utilsService;
+
+    public String getToken() {
+        return utilsService.getBotToken();
+    }
+
+    public String getPassword() {
+        return utilsService.getPassword();
+    }
+
 
     public static String availableAdminPanelMessage =
             """
@@ -12,10 +24,10 @@ public class BotUtils {
                     /add
                     /delete""";
 
-    public static boolean isGetEntered = false;
-    public static boolean isAddEntered = false;
-    public static boolean isDeleteEntered = false;
-    public static boolean isStartEntered = false;
-    public static boolean isPasswordEntered = false;
+    public static boolean isGetEntered = false; //т.к /get требует 2 ввода: /get и (all или id), то требуется внести проверку, что был первый ввод
+    public static boolean isAddEntered = false; //т.к /add требует 2 ввода: /add и (name и goldCount), то требуется внести проверку, что был первый ввод
+    public static boolean isDeleteEntered = false; //т.к /delete требует 2 ввода: /delete и id, то требуется внести проверку, что был первый ввод
+    public static boolean isStartEntered = false; //проверяет, был ли прописан /start
+    public static boolean isPasswordEntered = false; //проверяет, был ли введён пароль
 
 }
